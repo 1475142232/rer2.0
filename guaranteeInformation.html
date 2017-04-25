@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房源信息</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <!-- Morris -->
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link href="css/bootstrap-table.css" rel="stylesheet">
+    <base target="_blank">
+
+	<style>
+        .droppable-active{background-color:#ffe!important}.tools a{cursor:pointer;font-size:80%}.form-body .col-md-6,.form-body .col-md-12{min-height:400px}.draggable{cursor:move}
+        #fangyuan{height: 267px;overflow: scroll;margin: 10px;padding: 0;}
+        #fangyuan li{float: left;list-style: none;}
+        #carousel1{margin: 0 0 40px 0;}
+    </style>
+</head>
+<body class="gray-bg">
+    <div class="ibox-content"><h3 class="text-navy">房源信息</h3></div>
+    <table id="mytab"></table>
+   	<!---模态框1开始-->
+    <div class="modal inmodal bs-example-modal-lg" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated bounceInLeft">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title">房源详情</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal m-t">
+                        <div class="ibox float-e-margins" style="width: 400px;margin: 0 auto;">
+                            <!-- <div class="ibox-content"> -->
+                                <div class="carousel slide" id="carousel1">
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img alt="image" class="img-responsive" src="img/p1.jpg">
+                                        </div>
+                                        <div class="item">
+                                            <img alt="image" class="img-responsive" src="img/p2.jpg">
+                                        </div>
+                                        <div class="item ">
+                                            <img alt="image" class="img-responsive" src="img/p3.jpg">
+                                        </div>
+                                    </div>
+                                    <a data-slide="prev" href="carousel.html#carousel1" class="left carousel-control">
+                                        <span class="icon-prev"></span>
+                                    </a>
+                                    <a data-slide="next" href="carousel.html#carousel1" class="right carousel-control">
+                                        <span class="icon-next"></span>
+                                    </a>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">总价：</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="" class="form-control" placeholder="请输入总价" value="270万元">
+                            </div>
+                            <label class="col-sm-2 control-label">平米单价：</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="" class="form-control" placeholder="请输入平米单价" value="62776元">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">户型：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入户型" value="1室1厅">
+                            </div>
+                            <label class="col-sm-2 control-label">建筑面积：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入建筑面积" value="43.01">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">楼层：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入楼层" value="7/16层">
+                            </div>
+                            <label class="col-sm-2 control-label">产权性质：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入产权性质" value="商品房">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">装修：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入装修" value="简装">
+                            </div>
+                            <label class="col-sm-2 control-label">朝向：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入朝向" value="南北">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">建筑结构：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入建筑结构" value="砖混结构">
+                            </div>
+                            <label class="col-sm-2 control-label">年代：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入年代" value="1990">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">地铁：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入地铁" value="2号线雍和宫站">
+                            </div>
+                            <label class="col-sm-2 control-label">小区：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入小区" value="盛德紫阙">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">发布时间：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入发布时间" value="2016/8/13">
+                            </div>
+                            <label class="col-sm-2 control-label">区域：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入区域" value="北京  东城  安定门">
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">土地使用证号：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入土地使用证号" value="21244454120001">
+                            </div>
+                            <label class="col-sm-2 control-label">土地使用证：</label>
+                            <div class="col-sm-4">
+                                <button type="button">预览</button>
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">房屋所有权证号：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="" placeholder="请输入房屋所有权证号" value="0200012012012">
+                            </div>
+                            <label class="col-sm-2 control-label">房屋所有权证：</label>
+                            <div class="col-sm-4">
+                                <button type="button">预览</button>
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">房源描述：</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="4" cols="">盛德紫阙——亲，还在考虑一个好的地段城市中心独大交通生活便利被三大知名公园环抱空气清新为孩子能上好的市重点吗？盛德紫阙位于北京市地坛公园北，北二环安定门向北1000米。交通十分便利，东直门机场轻轨、机场高速、交通枢纽15车程，2号线（安定门站）、5号线（和平里北街站）步行10均可达。</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group draggable">
+                            <label class="col-sm-2 control-label">其他：</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="4" cols=""></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.5"></script>
+<script src="js/jquery-ui-1.10.4.min.js"></script>
+<script src="js/content.min.js?v=1.0.0"></script>
+<script src="js/plugins/beautifyhtml/beautifyhtml.js"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script src="js/bootstrap-table.js"></script>
+<script src="js/FanYuanList.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
